@@ -1,12 +1,10 @@
 apply plugin: 'com.android.library'
-apply plugin: 'com.novoda.bintray-release'
 android {
-    compileSdkVersion 23
-    buildToolsVersion "23.0.3"
+    compileSdkVersion 28
 
     defaultConfig {
         minSdkVersion 14
-        targetSdkVersion 23
+        targetSdkVersion 28
         versionCode 1
         versionName "1.0"
 
@@ -30,16 +28,9 @@ dependencies {
     androidTestCompile('com.android.support.test.espresso:espresso-core:2.2.2', {
         exclude group: 'com.android.support', module: 'support-annotations'
     })
-    compile 'com.android.support:appcompat-v7:23.4.0'
-    compile 'com.android.support:design:23.4.0+'
+    implementation 'androidx.appcompat:appcompat:1.2.0-rc02'
+    implementation "androidx.annotation:annotation:1.1.0"
+    implementation 'androidx.viewpager2:viewpager2:1.1.0-alpha01'
+    implementation 'com.google.android.material:material:1.3.0-alpha02'
     testCompile 'junit:junit:4.12'
-}
-
-publish {
-    userOrg = 'androidkun'
-    groupId = 'com.androidkun'
-    artifactId = 'XTabLayout'
-    publishVersion = '1.1.5'
-    desc = 'Added support to modify text size and indicator width based on the original TabLayout.'
-    website = 'https://github.com/AndroidKun/XTabLayout'
 }
